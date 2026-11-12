@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { FiCalendar, FiGithub } from "react-icons/fi";
+import { FiCalendar, FiGithub, FiPlayCircle } from "react-icons/fi";
 
-function ProjectCard({ project, index, labels }) {
+function ProjectCard({ project, index, labels, onDemo }) {
   const hasGithub = Boolean(project.github);
   const coverAlt = project.coverAlt ?? project.title;
 
@@ -49,6 +49,16 @@ function ProjectCard({ project, index, labels }) {
         </div>
 
         <p>{project.description}</p>
+
+        {project.demoVideo && (
+          <button
+            type="button"
+            className="button button--primary project-card__demo"
+            onClick={() => onDemo?.(project)}
+          >
+            <FiPlayCircle /> {labels?.demo ?? "Voir la démo"}
+          </button>
+        )}
 
         <div className="project-card__stack">
           <span className="project-card__stack-title">{labels?.technologies}</span>

@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { projects } from "../data/portfolioData";
 import { useLanguage } from "../hooks/useLanguage.jsx";
 import ProjectCard from "./ProjectCard";
+import ProjectDemoModal from "./ProjectDemoModal";
 
 const filterOrder = ["all", "software", "ai"];
 
 function Projects() {
   const { t } = useLanguage();
   const [filter, setFilter] = useState("all");
+  const [demoProject, setDemoProject] = useState(null);
+  const closeDemo = useCallback(() => setDemoProject(null), []);
   const filters = filterOrder;
   const localizedProjects = projects.map((project) => ({
     ...project,
@@ -56,12 +59,16 @@ function Projects() {
                 labels={{
                   technologies: t.projects.technologies,
                   github: t.projects.githubLabel,
+                  demo: t.projects.demo.button,
                 }}
+                onDemo={setDemoProject}
               />
             ))}
           </AnimatePresence>
         </motion.div>
       </div>
+
+      <ProjectDemoModal project={demoProject} onClose={closeDemo} labels={t.projects.demo} />
     </section>
   );
 }

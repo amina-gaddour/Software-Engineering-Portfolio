@@ -48,7 +48,7 @@ export const skills = {
 export const projects = [
   { id: "event-planner", year: "2026", categories: ["software"], technologies: ["Laravel", "MySQL"], cover: asset("images/projects/event-planner-dashboard.png"), github: "" },
   { id: "hr-workflow", year: "2024", categories: ["software"], technologies: ["Java 8", "Spring Boot", "React", "SQL Server"], cover: asset("images/projects/hr-workflow-dashboard.jpg"), github: "" },
-  { id: "docia", year: "2026", categories: ["software", "ai"], technologies: ["Python", "FastAPI", "Next.js", "TypeScript", "OCR", "Docling", "Ollama", "Qwen2.5", "Gemini API"], cover: asset("images/projects/docuai-dashboard.png"), github: "" },
+  { id: "docia", year: "2026", categories: ["software", "ai"], technologies: ["Python", "FastAPI", "Next.js", "TypeScript", "OCR", "Docling", "Ollama", "Qwen2.5", "Gemini API"], cover: asset("images/projects/docuai-dashboard.png"), demoVideo: asset("videos/docia-demo.mp4"), github: "" },
   { id: "riskinsight", year: "2025", categories: ["ai"], technologies: ["Python", "scikit-learn", "Flask", "React"], cover: asset("images/projects/prediction-sinistre-dashboard.jpg"), github: "" },
   { id: "mission", year: "2026", categories: ["software"], technologies: ["Java", "Spring Boot", "Angular", "Spring Security", "MySQL"], cover: asset("images/projects/mission-management-dashboard.png"), github: "" },
 ];
